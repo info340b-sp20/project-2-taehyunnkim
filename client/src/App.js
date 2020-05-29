@@ -1,28 +1,35 @@
 import React, { Component } from 'react';
-import Button from 'react-bootstrap/Button';
+import { Navbar, Nav, NavItem, NavLink } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <MenuNav />
     </div>
   );
 }
 
-export class Navbar extends Component {
+export class MenuNav extends Component {
   render() {
     return (
       <div>
-        <ul id="nav">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#donate">Donate</a></li>
-          <li><a href="#signin">Sign in</a></li>
-        </ul>
+        <Navbar color="white" light expand="md">
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <NavLink href="/components/">About</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/components/">Donate</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/components/">Sign in</NavLink>
+            </NavItem>
+          </Nav>
+        </Navbar>
       </div>
     )
   }
 }
-
 
 export default App;
