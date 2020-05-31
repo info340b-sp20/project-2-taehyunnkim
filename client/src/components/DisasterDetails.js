@@ -16,7 +16,7 @@ export default function DisasterDetails(props) {
     };
 
     fetchData();
-  }, []);
+  });
 
   return (
     <div id='disaster-details' className='container'>

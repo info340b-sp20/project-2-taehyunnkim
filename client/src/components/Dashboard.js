@@ -29,7 +29,6 @@ function getDisasters() {
   let disasters = fetch(DISASTER_API)
     .then(res => res.json())
     .then(data => {
-      console.log(data);
       let disasters = [];
       data.data.forEach(disaster => {
         let disasterDescription = disaster.fields.name;
@@ -76,36 +75,9 @@ function getDisasters() {
               }
             });
           }
-        } else {
-          let disasterType = '';
-          let details = disaster.href;
-          fetch(details)
-            .then(res => res.json())
-            .then(data => {                
-              disasterType = data.data[0].fields.primary_type.name;
-              data.data[0].fields.country.forEach(country => {
-                country = country.name;
-                if (disasters.length === 0) {
-                  disasters.push({country, disasters: [{disasterType, id}]});
-                } else {
-                  let addNewData = true;
-                  disasters.forEach(data => {
-                    if (data.country === country) {
-                      data.disasters.push({disasterType, id});
-                      addNewData = false;
-                    }
-                  });
-    
-                  if (addNewData) {
-                    disasters.push({country, disasters: [{disasterType, id}]});
-                  }
-                }
-              });;
-            })
         }
       });
 
-      console.log(disasters);
       return disasters;
   })
   .catch((err) => console.log(err));
