@@ -8,13 +8,13 @@ export default function NavigationBar() {
             <NavbarBrand href="/">Project 2</NavbarBrand>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">About</NavLink>
+                <NavLink href="/about">About</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/">Donate</NavLink>
+                <NavLink href="/donate">Donate</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/">Sign in</NavLink>
+                <NavLink href="/signin">Sign in</NavLink>
               </NavItem>
             </Nav>
           </div>

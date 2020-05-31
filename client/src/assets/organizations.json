@@ -2,7 +2,7 @@
     {
         "name": "American Red Cross",
         "info": "The American Red Cross, also known as The American National Red Cross, is a humanitarian organization that provides emergency assistance, disaster relief, and disaster preparedness education in the United States.",
-        "image":"../img/americanredcross.jpg",
+        "image":"./img/americanredcross.jpg",
         "website":"https://www.redcross.org/"
     },
     {
@@ -56,7 +56,7 @@
     {
         "name": "All Hands and Hearts – Smart Response",
         "info": "All Hands And Hearts is a volunteer-powered disaster relief organization that addresses the immediate and long-term needs of communities impacted by natural disasters.",
-        "image":"220px-All_Hands_And_Hearts_-_Smart_Response_new_logo_(2018).png",
+        "image":"./img/220px-All_Hands_And_Hearts_-_Smart_Response_new_logo_(2018).png",
         "website":"https://www.allhandsandhearts.org/"
     }
 ]

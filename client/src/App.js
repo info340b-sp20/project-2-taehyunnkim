@@ -13,7 +13,7 @@ function App() {
       <Switch>
         <Route exact path='/' component={Dashboard} />
         <Route path='/articles/:data' component={DisasterDetails} />
-        <Route path='donate'>
+        <Route path='/donate'>
           <OrganizationList organizations = {ORGANIZATIONS} />
         </Route>
       </Switch>
