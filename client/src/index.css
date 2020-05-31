@@ -16,3 +16,35 @@ code {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   padding: 15px 10px!important;
 }
+
+#card-container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  cursor: pointer;
+  margin: 10px 0;
+  width: 250px;
+  padding: 20px 10px;
+}
+
+.card h1 {
+  margin-bottom: 0.1em;
+  font-size: 1.3em;
+}
+
+.card h2 {
+  color: gray;
+  font-size: 1em;
+}
+
+#disaster-details {
+  margin-top: 30px;
+}
+
+#disaster-details section {
+  margin-top: 20px;
+}
