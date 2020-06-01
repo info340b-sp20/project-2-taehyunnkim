@@ -4,6 +4,7 @@ import OrganizationList from './components/OrganizationPage';
 import ORGANIZATIONS from './assets/organizations.json';
 import Dashboard from './components/Dashboard';
 import DisasterDetails from './components/DisasterDetails';
+import AboutPage from './components/AboutPage'
 import { Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path='/donate'>
           <OrganizationList organizations = {ORGANIZATIONS} />
         </Route>
+        <Route path='/about' component={AboutPage}/>
       </Switch>
     </div>
   );

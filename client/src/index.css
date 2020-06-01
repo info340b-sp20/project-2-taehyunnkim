@@ -110,3 +110,32 @@ a {
 .active a {
   color: white!important;
 }
+
+.containerText {
+  margin-top: 3vw;
+  margin-bottom: 3vw;
+  margin-right: 9vw;
+  margin-left: 9vw;
+}
+
+.containerText p {
+  font-size: 1.3em;
+}
+
+.img-container {
+  display: flex;
+  margin-right: 5vw;
+  margin-left: 13vw;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+}
+
+.map-img {
+  width: 80%;
+}
+
+.donation-webpage {
+  width: 80%;
+  box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
+}
+
