@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import CardList from './CardList';
 const DISASTER_API = 'https://api.reliefweb.int/v1/disasters?appname=project2&limit=1000&filter[field]=status&filter[value]=current';
 
 export default function Dashboard() {
   const [disasters, setDisasters] = useState([]);
   const [areasWithDisasters, setAreas] = useState([]);
+
+  // added for drop down menu
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const toggle = () => setDropdownOpen(prevState => !prevState);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,6 +24,20 @@ export default function Dashboard() {
 
   return (
     <div className='container'>
+      
+      <div className='dropContainer'>
+        <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+          <DropdownToggle caret>
+          WORLD
+          </DropdownToggle>
+
+          <DropdownMenu>
+            <DropdownItem>country1</DropdownItem>
+            <DropdownItem>country2</DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+      </div>
+
       <CardList disasters={disasters} />
     </div>
   )
@@ -30,6 +49,7 @@ function getDisasters() {
     .then(res => res.json())
     .then(data => {
       let disasters = [];
+
       data.data.forEach(disaster => {
         let disasterDescription = disaster.fields.name;
         let id = disaster.id;

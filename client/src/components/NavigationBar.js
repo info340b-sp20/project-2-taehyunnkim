@@ -6,7 +6,7 @@ export default function NavigationBar() {
         <Navbar color="white" light expand="md">
           <div className='container'>
             <img id="projectLogo" src="./img/proj_logo.png" alt="logo with red connection"/>
-            <NavbarBrand href="/">Project 2</NavbarBrand>
+            <NavbarBrand href="/">Disaster Live</NavbarBrand>
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink href="/about">About</NavLink>
