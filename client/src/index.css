@@ -35,7 +35,11 @@ footer p {
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+
+#card-container > div {
+  width: 100%;
 }
 
 .card {
@@ -98,7 +102,7 @@ footer p {
   display: block;
   width: 35px;
   height: 35px;
-  border: 1px solid gray;
+  border: 1px solid lightgray;
   border-radius: 3px;
 }
 
@@ -122,10 +126,8 @@ footer p {
 
 .containerText {
   margin-top: 3vw;
-  margin-bottom: 3vw;
-  margin-right: 9vw;
-  margin-left: 9vw;
 }
+
 .containerText h1 {
   font-size: 1.8em;
 }
@@ -147,6 +149,46 @@ footer p {
 
 .donation-webpage {
   width: 80%;
-  box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
 }
 
+.rsm-svg {
+  width: 600px;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-list-container {
+  width: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+  .rsm-svg {
+    width: 400px;
+  }
+
+  #card-container {
+    justify-content: center;
+  }
+
+  #organization-list {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .rsm-svg {
+    width: 300px;
+  }
+
+  #card-container {
+    justify-content: center;
+  }
+
+  #organization-list {
+    justify-content: center;
+  }
+}

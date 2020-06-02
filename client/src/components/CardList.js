@@ -24,7 +24,7 @@ export default function CardList({ disasters }) {
   }
   
   return (
-    <div>
+    <div className='card-list-container'>
       <div id='card-container'>
         {updatedDisasters}
       </div>

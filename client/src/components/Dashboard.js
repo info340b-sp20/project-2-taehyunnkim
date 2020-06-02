@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CardList from './CardList';
+import MapChart from "./MapChart";
 const DISASTER_API = 'https://api.reliefweb.int/v1/disasters?appname=project2&limit=1000&filter[field]=status&filter[value]=current';
 
 export default function Dashboard() {
@@ -10,7 +11,8 @@ export default function Dashboard() {
     const fetchData = async () => {
       const result = await getDisasters();
  
-      setAreas(Object.keys(result).sort());
+      let countries = result.map(disaster => disaster.country);
+      setAreas(countries);
       setDisasters(result);
     };
 
@@ -18,7 +20,8 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div className='container'>
+    <div className='container center'>
+      <MapChart countries={areasWithDisasters} />
       <CardList disasters={disasters} />
     </div>
   )
