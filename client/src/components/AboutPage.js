@@ -5,7 +5,7 @@ export default class AboutContent extends React.Component {
         return(
             <div className="containerText">
                 <section>
-                    <h3>About</h3>
+                    <h1>About</h1>
                     <div className="img-container">
                         <img className="map-img" src="./img/simple_map.png" alt="world map with red dots"/>
                     </div>
@@ -22,7 +22,7 @@ export default class AboutContent extends React.Component {
                         From there, the UI will guide them as they select which organization they wish to support. With the simplicity and user-friendly interface of Disaster Live,
                          users have an all-in-one solution for researching and supporting their favorite organizations.</p>
                     {/* need to edit later */}
-                    <h3>About Team</h3>
+                    <h1>About Team</h1>
                     <p>Eric Kim, Jisu Kim, Sharon Lin, and Xi Yan</p>
                 </section>
             </div>

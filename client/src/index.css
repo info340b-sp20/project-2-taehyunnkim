@@ -117,7 +117,9 @@ a {
   margin-right: 9vw;
   margin-left: 9vw;
 }
-
+.containerText h1 {
+  font-size: 1.8em;
+}
 .containerText p {
   font-size: 1.3em;
 }
