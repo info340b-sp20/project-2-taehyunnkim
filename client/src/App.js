@@ -5,6 +5,7 @@ import ORGANIZATIONS from './assets/organizations.json';
 import Dashboard from './components/Dashboard';
 import DisasterDetails from './components/DisasterDetails';
 import { Switch, Route } from 'react-router-dom';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <OrganizationList organizations = {ORGANIZATIONS} />
         </Route>
       </Switch>
+      <Footer />
     </div>
   );
 }
