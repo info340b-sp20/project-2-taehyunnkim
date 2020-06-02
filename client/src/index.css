@@ -110,3 +110,8 @@ a {
 .active a {
   color: white!important;
 }
+
+#projectLogo {
+  width: 30px;
+  margin-right: .2em;
+}
