@@ -6,23 +6,30 @@ const DISASTER_API = 'https://api.reliefweb.int/v1/disasters?appname=project2&li
 
 export default function Dashboard() {
   const [disasters, setDisasters] = useState([]);
+  const [disaster, setDisaster] = useState([]);
   const [areasWithDisasters, setAreas] = useState([]);
-
-  // added for drop down menu
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [dropdownSelected, setDropdownSelected] = useState('World');
   const toggle = () => setDropdownOpen(prevState => !prevState);
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getDisasters();
+      let result = await getDisasters();
  
       let countries = result.map(disaster => disaster.country);
       setAreas(countries);
       setDisasters(result);
+      setDisaster(result);
     };
 
     fetchData();
   }, []);
+
+  let dropdownItems = areasWithDisasters.map(country => <DropdownItem key={country} onClick={(e) => {
+    let disaster = disasters.filter(disaster => disaster.country === e.target.textContent);
+    setDisaster(disaster);
+    setDropdownSelected(e.target.textContent);
+  }}>{country}</DropdownItem>);
 
   return (
     <div className='container center'>
@@ -30,16 +37,19 @@ export default function Dashboard() {
       
       <Dropdown isOpen={dropdownOpen} toggle={toggle}>
         <DropdownToggle caret>
-        WORLD
+          {dropdownSelected}
         </DropdownToggle>
 
         <DropdownMenu>
-          <DropdownItem>country1</DropdownItem>
-          <DropdownItem>country2</DropdownItem>
+          <DropdownItem onClick={() => {
+            setDisaster(disasters)
+            setDropdownSelected('World');
+            }}>World</DropdownItem>
+          {dropdownItems}
         </DropdownMenu>
       </Dropdown>
 
-      <CardList disasters={disasters} />
+      <CardList disasters={disaster} />
     </div>
   )
 }
