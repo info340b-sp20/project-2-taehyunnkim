@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import CardList from './CardList';
 const DISASTER_API = 'https://api.reliefweb.int/v1/disasters?appname=project2&limit=1000&filter[field]=status&filter[value]=current';
 
 export default function Dashboard() {
-  const [disasters, setDisasters] = useState({});
+  const [disasters, setDisasters] = useState([]);
   const [areasWithDisasters, setAreas] = useState([]);
 
   useEffect(() => {
@@ -18,7 +19,7 @@ export default function Dashboard() {
 
   return (
     <div className='container'>
-      {console.log(disasters, areasWithDisasters)}
+      <CardList disasters={disasters} />
     </div>
   )
 }
@@ -29,9 +30,9 @@ function getDisasters() {
     .then(res => res.json())
     .then(data => {
       let disasters = [];
-      console.log('call');
       data.data.forEach(disaster => {
         let disasterDescription = disaster.fields.name;
+        let id = disaster.id;
         let colonIndex = disasterDescription.indexOf(':');
         let dashIndex = disasterDescription.indexOf('-');
         if (colonIndex !== -1) {
@@ -39,39 +40,41 @@ function getDisasters() {
           let slashIndex = country.indexOf('/');
           let disasterType = disasterDescription.substring(colonIndex+2, dashIndex-1);
           if (slashIndex === -1) {
-            if (disasters[country]) {
-              disasters[country].push(disasterType);
+            if (disasters.length === 0) {
+              disasters.push({country, disasters: [{disasterType, id}]});
             } else {
-              disasters[country] = [];
-              disasters[country].push(disasterType);
+              let addNewData = true;
+              disasters.forEach(data => {
+                if (data.country === country) {
+                  data.disasters.push({disasterType, id});
+                  addNewData = false;
+                }
+              });
+
+              if (addNewData) {
+                disasters.push({country, disasters: [{disasterType, id}]});
+              }
             }
           } else {
             let seperateCountries = country.split('/');
             seperateCountries.forEach(country => {
-              if (disasters[country]) {
-                disasters[country].push(disasterType);
+              if (disasters.length === 0) {
+                disasters.push({country, disasters: [{disasterType, id}]});
               } else {
-                disasters[country] = [];
-                disasters[country].push(disasterType);
+                let addNewData = true;
+                disasters.forEach(data => {
+                  if (data.country === country) {
+                    data.disasters.push({disasterType, id});
+                    addNewData = false;
+                  }
+                });
+  
+                if (addNewData) {
+                  disasters.push({country, disasters: [{disasterType, id}]});
+                }
               }
             });
           }
-        } else {
-          let disasterType = '';
-          let details = disaster.href;
-          fetch(details)
-            .then(res => res.json())
-            .then(data => {                
-              disasterType = data.data[0].fields.primary_type.name;
-              data.data[0].fields.country.forEach(country => {
-                if (disasters[country.name]) {
-                  disasters[country.name].push(disasterType);
-                } else {
-                  disasters[country.name] = [];
-                  disasters[country.name].push(disasterType);
-                }
-              });;
-            })
         }
       });
 

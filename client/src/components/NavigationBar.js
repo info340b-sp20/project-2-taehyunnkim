@@ -5,16 +5,16 @@ export default function NavigationBar() {
     return (
         <Navbar color="white" light expand="md">
           <div className='container'>
-            <NavbarBrand href="/">Project 2</NavbarBrand>
+            <NavbarBrand href="/">Disaster Live</NavbarBrand>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">About</NavLink>
+                <NavLink href="/about">About</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/">Donate</NavLink>
+                <NavLink href="/donate">Donate</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/">Sign in</NavLink>
+                <NavLink href="/signin">Sign in</NavLink>
               </NavItem>
             </Nav>
           </div>

@@ -1,0 +1,62 @@
+[
+    {
+        "name": "American Red Cross",
+        "info": "The American Red Cross, also known as The American National Red Cross, is a humanitarian organization that provides emergency assistance, disaster relief, and disaster preparedness education in the United States.",
+        "image":"./img/americanredcross.jpg",
+        "website":"https://www.redcross.org/"
+    },
+    {
+        "name": "International Rescue Committee",
+        "info": "The International Rescue Committee is a global humanitarian aid, relief, and development nongovernmental organization.",
+        "image":"./img/1200px-International_Rescue_Committee_Logo.svg.png",
+        "website":"https://www.rescue.org/"
+    },
+    {
+        "name": "Direct Relief",
+        "info": "Direct Relief is a nonprofit, nonpartisan organization with a stated mission to “improve the health and lives of people affected by poverty or emergency situations by mobilizing and providing essential medical resources needed for their care.",
+        "image":"./img/Direct-Relief-Square.png",
+        "website":"https://www.directrelief.org/"
+    },
+    {
+        "name": "World Relief",
+        "info": "World Relief is an international nonprofit organization aiming to help vulnerable people",
+        "image":"./img/0.png",
+        "website":"https://worldrelief.org/"
+    },
+    {
+        "name": "Americares",
+        "info": "Americares is a global non-profit organization focused on health and development that respond to individuals affected by poverty, disaster, or crisis.",
+        "image":"./img/15395657_640x640.jpg",
+        "website":"https://www.americares.org/"
+    },
+    {
+        "name": "United Nations Office for Disaster Risk Reduction (UNDRR)",
+        "info": "As the United Nations Office for Disaster Risk Reduction, UNDRR brings governments, partners and communities together reduce disaster risk and losses to ensure a safer, sustainable future.",
+        "image": "./img/banner-logo-nuevo-english.png",
+        "website": "https://www.undrr.org/"
+    },
+    {
+        "name": "Care International",
+        "info": "Care International is a major international humanitarian agency delivering emergency relief and long-term international development projects. ",
+        "image": "./img/unnamed.jpg",
+        "website": "https://www.care-international.org/"
+    },
+    {
+        "name": "Mercy Corps",
+        "info": "Mercy Corps is a global non-governmental, humanitarian aid organization operating in transitional contexts that have undergone, or have been undergoing, various forms of economic, environmental, social and political instabilities.",
+        "image": "./img/220px-Mercy_Corps_Logo-e1551237651171.png",
+        "website": "https://www.mercycorps.org/"
+    },
+    {
+        "name": "Catholic Relief Services",
+        "info": "Catholic Relief Services is the international humanitarian agency of the Catholic community in the United States.",
+        "image": "./img/download.png",
+        "website": "https://www.crs.org/"
+    },
+    {
+        "name": "All Hands and Hearts – Smart Response",
+        "info": "All Hands And Hearts is a volunteer-powered disaster relief organization that addresses the immediate and long-term needs of communities impacted by natural disasters.",
+        "image":"./img/220px-All_Hands_And_Hearts_-_Smart_Response_new_logo_(2018).png",
+        "website":"https://www.allhandsandhearts.org/"
+    }
+]
