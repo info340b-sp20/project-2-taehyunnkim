@@ -192,3 +192,6 @@ footer p {
     justify-content: center;
   }
 }
+.dropContainer {
+  margin-top: 2rem;
+}
