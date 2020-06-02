@@ -17,6 +17,15 @@ a {
   text-decoration: none!important;
 }
 
+footer {margin-top: 30px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.5em;
+  margin: 0;
+}
+
 .navbar {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   padding: 15px 10px!important;
@@ -29,11 +38,19 @@ a {
   justify-content: space-evenly;
 }
 
+#card-container > div {
+  width: 100%;
+}
+
 .card {
   cursor: pointer;
   margin: 10px 0;
   width: 250px;
   padding: 20px 10px;
+}
+
+.navbar-brand {
+  margin-top: 2px;
 }
 
 .org-card {
@@ -89,7 +106,7 @@ a {
   display: block;
   width: 35px;
   height: 35px;
-  border: 1px solid gray;
+  border: 1px solid lightgray;
   border-radius: 3px;
 }
 
@@ -118,10 +135,8 @@ a {
 
 .containerText {
   margin-top: 3vw;
-  margin-bottom: 3vw;
-  margin-right: 9vw;
-  margin-left: 9vw;
 }
+
 .containerText h1 {
   font-size: 1.8em;
 }
@@ -143,9 +158,49 @@ a {
 
 .donation-webpage {
   width: 80%;
-  box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
 }
 
+.rsm-svg {
+  width: 600px;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-list-container {
+  width: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+  .rsm-svg {
+    width: 400px;
+  }
+
+  #card-container {
+    justify-content: center;
+  }
+
+  #organization-list {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .rsm-svg {
+    width: 300px;
+  }
+
+  #card-container {
+    justify-content: center;
+  }
+
+  #organization-list {
+    justify-content: center;
+  }
+}
 .dropContainer {
   margin-top: 2rem;
 }

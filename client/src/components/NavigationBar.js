@@ -14,9 +14,9 @@ export default function NavigationBar() {
               <NavItem>
                 <NavLink href="/donate">Donate</NavLink>
               </NavItem>
-              <NavItem>
+              {/* <NavItem>
                 <NavLink href="/signin">Sign in</NavLink>
-              </NavItem>
+              </NavItem> */}
             </Nav>
           </div>
         </Navbar>

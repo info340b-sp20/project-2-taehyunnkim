@@ -3,7 +3,7 @@ import React from 'react';
 export default class AboutContent extends React.Component {
     render(){
         return(
-            <div className="containerText">
+            <div className="container containerText">
                 <section>
                     <h1>About</h1>
                     <div className="img-container">

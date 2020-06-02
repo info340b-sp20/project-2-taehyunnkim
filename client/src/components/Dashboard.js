@@ -1,44 +1,55 @@
 import React, { useState, useEffect } from 'react';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import CardList from './CardList';
+import MapChart from "./MapChart";
 const DISASTER_API = 'https://api.reliefweb.int/v1/disasters?appname=project2&limit=1000&filter[field]=status&filter[value]=current';
 
 export default function Dashboard() {
   const [disasters, setDisasters] = useState([]);
+  const [disaster, setDisaster] = useState([]);
   const [areasWithDisasters, setAreas] = useState([]);
-
-  // added for drop down menu
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [dropdownSelected, setDropdownSelected] = useState('World');
   const toggle = () => setDropdownOpen(prevState => !prevState);
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getDisasters();
+      let result = await getDisasters();
  
-      setAreas(Object.keys(result).sort());
+      let countries = result.map(disaster => disaster.country);
+      setAreas(countries);
       setDisasters(result);
+      setDisaster(result);
     };
 
     fetchData();
   }, []);
 
+  let dropdownItems = areasWithDisasters.map(country => <DropdownItem key={country} onClick={(e) => {
+    let disaster = disasters.filter(disaster => disaster.country === e.target.textContent);
+    setDisaster(disaster);
+    setDropdownSelected(e.target.textContent);
+  }}>{country}</DropdownItem>);
+
   return (
-    <div className='container'>
+    <div className='container center'>
+      <MapChart countries={areasWithDisasters} />
       
-      <div className='dropContainer'>
-        <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-          <DropdownToggle caret>
-          WORLD
-          </DropdownToggle>
+      <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+        <DropdownToggle caret>
+          {dropdownSelected}
+        </DropdownToggle>
 
-          <DropdownMenu>
-            <DropdownItem>country1</DropdownItem>
-            <DropdownItem>country2</DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-      </div>
+        <DropdownMenu>
+          <DropdownItem onClick={() => {
+            setDisaster(disasters)
+            setDropdownSelected('World');
+            }}>World</DropdownItem>
+          {dropdownItems}
+        </DropdownMenu>
+      </Dropdown>
 
-      <CardList disasters={disasters} />
+      <CardList disasters={disaster} />
     </div>
   )
 }

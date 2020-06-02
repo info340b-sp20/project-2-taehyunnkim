@@ -6,6 +6,7 @@ import Dashboard from './components/Dashboard';
 import DisasterDetails from './components/DisasterDetails';
 import AboutPage from './components/AboutPage'
 import { Switch, Route } from 'react-router-dom';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         </Route>
         <Route path='/about' component={AboutPage}/>
       </Switch>
+      <Footer />
     </div>
   );
 }
