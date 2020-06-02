@@ -158,11 +158,13 @@ footer p {
 }
 
 .map-img {
-  width: 80%;
+  width: 100%;
+  height: auto;
 }
 
 .donation-webpage {
-  width: 80%;
+  width: 100%;
+  height: auto;
 }
 
 .rsm-svg {
