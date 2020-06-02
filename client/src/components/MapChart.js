@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { csv } from "d3-fetch";
-import { scaleLinear } from "d3-scale";
 import {
   ComposableMap,
   Geographies,
@@ -16,7 +14,8 @@ const MapChart = ({ countries }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    countries = countries.map(country => {
+    let countriesWithDisaster = countries;
+    countriesWithDisaster = countries.map(country => {
       let countryName = country.toLowerCase();
       if (countryName === 'republic of congo') {
         return 'republic of the congo';
@@ -27,7 +26,7 @@ const MapChart = ({ countries }) => {
       return countryName;
     });
     
-    setData(countries);
+    setData(countriesWithDisaster);
   }, [countries]);
 
   return (

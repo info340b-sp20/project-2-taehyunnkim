@@ -49,6 +49,10 @@ footer p {
   padding: 20px 10px;
 }
 
+.navbar-brand {
+  margin-top: 2px;
+}
+
 .org-card {
   width: 300px;
 }
