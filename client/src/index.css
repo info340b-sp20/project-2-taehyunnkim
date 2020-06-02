@@ -124,6 +124,11 @@ footer p {
   color: white!important;
 }
 
+#projectLogo {
+  width: 30px;
+  margin-right: .2em;
+}
+
 .containerText {
   margin-top: 3vw;
 }
