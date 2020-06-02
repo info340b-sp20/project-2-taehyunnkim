@@ -50,7 +50,7 @@ export default function CardList({ disasters }) {
 export function Card({ country, disaster }) {
   return(
     <Link to={'/articles/' + country + '-' + disaster.disasterType + '-' + disaster.id}>
-      <div className='card'>
+      <div className='card' aria-label={disaster.disasterType + 'in' + country}>
         <h1>{disaster.disasterType}</h1>
         <h2>{country}</h2>
       </div>

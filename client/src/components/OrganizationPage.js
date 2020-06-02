@@ -7,7 +7,7 @@ class OrganizationCard extends React.Component {
         let org = this.props.organization;
         return(
             <a target="_blank" href={org.website} rel="noopener noreferrer">
-                <Card id={org.name} className='org-card'>
+                <Card id={org.name} className='org-card' aria-label={org.name+" card: click to visit their website"}> 
                     <CardImg src={org.image} alt={org.name + " Logo"}/>
                     <CardBody>
                         <CardTitle>{org.name}</CardTitle>
@@ -26,7 +26,7 @@ export default class OrganizationList extends React.Component {
             return <OrganizationCard key={organization.name} organization={organization}/>
         })
         return(
-            <div id='organization-list' className="container">
+            <div id='organization-list' className="container" aria-label="list of organizations for donation">
                 {organizationCards}
             </div>
         );
