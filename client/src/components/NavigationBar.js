@@ -5,7 +5,7 @@ export default function NavigationBar() {
     return (
         <Navbar color="white" light expand="md">
           <div className='container'>
-            <NavbarBrand href="/">Project 2</NavbarBrand>
+            <NavbarBrand href="/">Disaster Live</NavbarBrand>
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink href="/about">About</NavLink>
